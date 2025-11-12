@@ -99,6 +99,72 @@
     @media (max-width: 768px) {
       .skills-container { flex-direction: column; gap: 50px; }
     }
+
+    /* === My Services === */
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .service-card {
+      border: 2px solid #3b4cca;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
+    .service-card:hover {
+      background: linear-gradient(135deg, #3b4cca, #6a82fb);
+      color: #fff;
+      transform: translateY(-5px);
+    }
+    .service-card .icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #3b4cca;
+    }
+    .service-card:hover .icon { color: #fff; }
+
+    /* === My Portfolio === */
+    .portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .portfolio-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-card:hover { transform: translateY(-8px); }
+    .portfolio-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .portfolio-card h4 {
+      margin: 10px 15px 5px;
+      color: #3b4cca;
+    }
+    .portfolio-card p {
+      margin: 0 15px 15px;
+      font-size: 14px;
+      color: #333;
+    }
+    .section-subtitle {
+      text-align: center;
+      font-weight: 500;
+      color: #3b4cca;
+      margin-top: -10px;
+      margin-bottom: 25px;
+    }
   </style>
 </head>
 <body>
@@ -109,6 +175,8 @@
         <a href="#Home" class="nav_link">Home</a>
         <a href="#About" class="nav_link">About</a>
         <a href="#Skills" class="nav_link">Skills</a>
+        <a href="#Services" class="nav_link">Services</a>
+        <a href="#Portfolio" class="nav_link">Portfolio</a>
         <a href="#Experience" class="nav_link">Experience</a>
         <a href="#Contact" class="nav_link">Contact</a>
       </div>
@@ -145,71 +213,44 @@
 
     <section class="skills section" id="Skills">
       <h2 class="section-title">My Expertise Area</h2>
-
       <div class="skills-container">
-        <!-- Soft Skills -->
         <div class="skills-column">
           <h3 class="skills-subtitle">Soft Skills</h3>
-
-          <div class="skill soft">
-            <div class="label">Team Building</div>
-            <div class="bar-container"><div class="bar" style="--width: 70%;"></div></div>
-            <div class="percent">70%</div>
-          </div>
-
-          <div class="skill soft">
-            <div class="label">Communication</div>
-            <div class="bar-container"><div class="bar" style="--width: 80%;"></div></div>
-            <div class="percent">80%</div>
-          </div>
-
-          <div class="skill soft">
-            <div class="label">Project Management</div>
-            <div class="bar-container"><div class="bar" style="--width: 70%;"></div></div>
-            <div class="percent">70%</div>
-          </div>
-
-          <div class="skill soft">
-            <div class="label">Problem Solving</div>
-            <div class="bar-container"><div class="bar" style="--width: 70%;"></div></div>
-            <div class="percent">70%</div>
-          </div>
+          <div class="skill soft"><div class="label">Team Building</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="percent">70%</div></div>
+          <div class="skill soft"><div class="label">Communication</div><div class="bar-container"><div class="bar" style="--width: 80%;"></div></div><div class="percent">80%</div></div>
+          <div class="skill soft"><div class="label">Project Management</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="percent">70%</div></div>
+          <div class="skill soft"><div class="label">Problem Solving</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="percent">70%</div></div>
         </div>
-
-        <!-- Hard Skills -->
         <div class="skills-column">
           <h3 class="skills-subtitle">Hard Skills</h3>
-
-          <div class="skill hard">
-            <div class="percent">90%</div>
-            <div class="bar-container"><div class="bar" style="--width: 90%;"></div></div>
-            <div class="label">Routing & Switching</div>
-          </div>
-
-          <div class="skill hard">
-            <div class="percent">85%</div>
-            <div class="bar-container"><div class="bar" style="--width: 85%;"></div></div>
-            <div class="label">Security</div>
-          </div>
-
-          <div class="skill hard">
-            <div class="percent">80%</div>
-            <div class="bar-container"><div class="bar" style="--width: 80%;"></div></div>
-            <div class="label">Wireless & SD-WAN</div>
-          </div>
-
-          <div class="skill hard">
-            <div class="percent">75%</div>
-            <div class="bar-container"><div class="bar" style="--width: 75%;"></div></div>
-            <div class="label">Monitoring & Tools</div>
-          </div>
-
-          <div class="skill hard">
-            <div class="percent">70%</div>
-            <div class="bar-container"><div class="bar" style="--width: 70%;"></div></div>
-            <div class="label">Automation</div>
-          </div>
+          <div class="skill hard"><div class="percent">90%</div><div class="bar-container"><div class="bar" style="--width: 90%;"></div></div><div class="label">Routing & Switching</div></div>
+          <div class="skill hard"><div class="percent">85%</div><div class="bar-container"><div class="bar" style="--width: 85%;"></div></div><div class="label">Security</div></div>
+          <div class="skill hard"><div class="percent">80%</div><div class="bar-container"><div class="bar" style="--width: 80%;"></div></div><div class="label">Wireless & SD-WAN</div></div>
+          <div class="skill hard"><div class="percent">75%</div><div class="bar-container"><div class="bar" style="--width: 75%;"></div></div><div class="label">Monitoring & Tools</div></div>
+          <div class="skill hard"><div class="percent">70%</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="label">Automation</div></div>
         </div>
+      </div>
+    </section>
+
+    <!-- My Services Section -->
+    <section class="services section" id="Services">
+      <h2 class="section-title">My Services</h2>
+      <div class="services-container">
+        <div class="service-card"><i class="bx bx-network-chart icon"></i><h3>Network Design & Implementation</h3><p>End-to-end network design, routing, and infrastructure setup across data centers and industrial environments.</p></div>
+        <div class="service-card"><i class="bx bx-shield-quarter icon"></i><h3>Security & Firewall Management</h3><p>Configuration and optimization of Fortigate, NAC, and network segmentation for enterprise-level security.</p></div>
+        <div class="service-card"><i class="bx bx-wifi icon"></i><h3>SD-WAN & Wireless Solutions</h3><p>Deployment and management of wireless and SD-WAN infrastructures for high availability and coverage.</p></div>
+        <div class="service-card"><i class="bx bx-code-curly icon"></i><h3>Network Automation</h3><p>Automating repetitive network tasks using Python, scripts, and orchestration tools.</p></div>
+      </div>
+    </section>
+
+    <!-- My Portfolio Section -->
+    <section class="portfolio section" id="Portfolio">
+      <h2 class="section-title">My Portfolio</h2>
+      <h3 class="section-subtitle">Recent Works</h3>
+      <div class="portfolio-container">
+        <div class="portfolio-card"><img src="assets/img/project1.jpg" alt="Project 1" loading="lazy"><h4>Enterprise Network Design</h4><p>Designed and deployed segmented enterprise networks integrating IoT and automation.</p></div>
+        <div class="portfolio-card"><img src="assets/img/project2.jpg" alt="Project 2" loading="lazy"><h4>Fortigate Firewall Optimization</h4><p>Enhanced multi-site firewall policy, reduced latency, and improved traffic visibility.</p></div>
+        <div class="portfolio-card"><img src="assets/img/project3.jpg" alt="Project 3" loading="lazy"><h4>Wireless Infrastructure Upgrade</h4><p>Upgraded wireless backbone with high-availability SD-WAN integration.</p></div>
       </div>
     </section>
 
