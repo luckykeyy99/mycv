@@ -1,316 +1,143 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>M. Akbar A. R. — Portfolio</title>
-  <meta name="description" content="Portfolio of M. Akbar A. R., a Senior Network Infrastructure & Security Engineer specializing in routing/switching, NAC, firewalls, SD-WAN, and industrial IoT.">
-  <meta name="keywords" content="M. Akbar A. R., Network Engineer, Security Engineer, Portfolio, Routing, Switching, Fortigate, Indonesia">
-  <meta name="author" content="M. Akbar A. R.">
-  <meta property="og:title" content="Portfolio | M. Akbar A. R.">
-  <meta property="og:description" content="Explore my experience in network infrastructure and security. Download my CV and get in touch!">
-  <meta property="og:image" content="assets/img/profile.jpg">
-  <meta property="og:url" content="https://your-website-url.com/">
-  <meta property="og:type" content="website">
-  <link rel="shortcut icon" href="assets/img/icon.jpg">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <style>
-    @media (max-width: 768px) {
-      .home_container, .about_container, .skills_container, .exp_list, .contact_grid {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-      }
-      .home_title { font-size: 1.5rem; }
-      .about_img_block img, .exp_item img { width: 100%; height: auto; }
-      .nav_menu { position: fixed; top: 0; right: -100%; width: 70%; height: 100vh; background: rgba(0,0,0,0.9); transition: 0.5s; }
-      .nav_menu.show { right: 0; }
-    }
-
-    .button { background: #007bff; color: white; border: none; padding: 10px; cursor: pointer; }
-    .button:hover { background: #0056b3; }
-
-    /* Skills section layout */
-    .skills-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 100px;
-      flex-wrap: wrap;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .skills-column {
-      flex: 1;
-      min-width: 350px;
-    }
-
-    .skills-subtitle {
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #3b4cca;
-    }
-
-    .skill {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: #222;
-    }
-
-    .skill .label { flex: 2; }
-
-    .skill .percent {
-      flex: 0;
-      width: 40px;
-      text-align: right;
-      color: #3b4cca;
-      font-weight: 600;
-    }
-
-    .bar-container {
-      flex: 5;
-      margin: 0 15px;
-      background: #e6e6e6;
-      height: 5px;
-      border-radius: 3px;
-      overflow: hidden;
-    }
-
-    .bar {
-      height: 5px;
-      background: linear-gradient(90deg, #3b4cca, #6a82fb);
-      border-radius: 3px;
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: fillBar 1.3s ease-out forwards;
-      width: var(--width);
-    }
-
-    @keyframes fillBar {
-      from { transform: scaleX(0); }
-      to { transform: scaleX(1); }
-    }
-
-    @media (max-width: 768px) {
-      .skills-container { flex-direction: column; gap: 50px; }
-    }
-
-    /* === My Services === */
-    .services-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .service-card {
-      border: 2px solid #3b4cca;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      transition: all 0.3s ease;
-      background: #fff;
-    }
-    .service-card:hover {
-      background: linear-gradient(135deg, #3b4cca, #6a82fb);
-      color: #fff;
-      transform: translateY(-5px);
-    }
-    .service-card .icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-      color: #3b4cca;
-    }
-    .service-card:hover .icon { color: #fff; }
-
-    /* === My Portfolio === */
-    .portfolio-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .portfolio-card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    .portfolio-card:hover { transform: translateY(-8px); }
-    .portfolio-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .portfolio-card h4 {
-      margin: 10px 15px 5px;
-      color: #3b4cca;
-    }
-    .portfolio-card p {
-      margin: 0 15px 15px;
-      font-size: 14px;
-      color: #333;
-    }
-    .section-subtitle {
-      text-align: center;
-      font-weight: 500;
-      color: #3b4cca;
-      margin-top: -10px;
-      margin-bottom: 25px;
-    }
-  </style>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Portfolio - Muhammad Akbar Jayadi AR</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
   <header class="header">
-    <nav class="nav bd-grid">
-      <div class="nav_logo">M. Akbar A. R.</div>
-      <div class="nav_menu">
-        <a href="#Home" class="nav_link">Home</a>
-        <a href="#About" class="nav_link">About</a>
-        <a href="#Skills" class="nav_link">Skills</a>
-        <a href="#Services" class="nav_link">Services</a>
-        <a href="#Portfolio" class="nav_link">Portfolio</a>
-        <a href="#Experience" class="nav_link">Experience</a>
-        <a href="#Contact" class="nav_link">Contact</a>
-      </div>
-    </nav>
+    <div class="nav container">
+      <div class="nav_logo">Muhammad Akbar Jayadi AR</div>
+      <nav class="nav_links">
+        <a href="#home">Home</a>
+        <a href="#about">Tentang</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Services">Services</a>
+        <a href="#Portfolio">Portfolio</a>
+        <a href="#Contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="l-main">
-    <section class="home" id="Home">
-      <div class="container home_container">
-        <div class="home_img"><img src="assets/img/profile.jpg" alt="Profile photo of M. Akbar A. R." loading="lazy"></div>
-        <h1 class="home_title">M. Akbar A. R.</h1>
-        <p class="home_profession">Senior Network Infrastructure & Security Engineer</p>
-        <div class="home_actions">
-          <a class="button" href="assets/pdf/CV-M-Akbar-AR.pdf" download>Download CV</a>
-          <a class="button ghost" href="#Contact">Contact</a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-container container fade-zoom">
+      <div class="hero-img-wrap">
+        <div class="hero-img-frame"></div>
+        <img src="assets/img/profile.jpg" alt="Profile" class="hero-img">
+      </div>
+      <h1 class="hero-name">Muhammad Akbar Jayadi AR</h1>
+      <p class="hero-role">Network Engineer</p>
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/akbarjayadi/" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/luckykeyy99" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+      </div>
+      <a class="btn-cv" href="assets/CV_Muhammad_Akbar_Jayadi_AR.pdf" download>Download CV</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2 class="section-title">Tentang Saya</h2>
+      <div class="about-container">
+        <div class="about-left fade-zoom">
+          <div class="about-img-wrap">
+            <div class="about-img-frame"></div>
+            <img src="assets/img/about.jpg" alt="About photo" class="about-img">
+          </div>
+          <p class="about-text">Saya adalah seorang <strong>Network Engineer</strong> yang berfokus pada perancangan, pengelolaan, dan pengamanan infrastruktur jaringan. Memiliki pengalaman dalam <em>Routing & Switching</em>, <em>Network Security</em>, <em>Wireless & SD-WAN</em>, serta <em>Network Automation</em>. Saya senang memecahkan masalah teknis yang kompleks, bekerja dalam tim, dan terus mengembangkan kemampuan untuk menciptakan solusi jaringan yang efisien dan andal.</p>
+        </div>
+        <div class="about-right fade-zoom">
+          <div class="info-block">
+            <h3>Informasi</h3>
+            <ul>
+              <li><i class="bx bx-user"></i> <span>Muhammad Akbar Jayadi AR</span></li>
+              <li><i class="bx bx-phone"></i> <span>0858 1112 7041</span></li>
+              <li><i class="bx bx-envelope"></i> <span>akbarjayadii@gmail.com</span></li>
+            </ul>
+          </div>
+          <div class="info-block">
+            <h3>Pengalaman Kursus</h3>
+            <ul>
+              <li><i class="bx bx-book"></i> <strong>6 Bulan</strong> — Network Infrastructure & Security</li>
+              <li><i class="bx bx-code-alt"></i> <strong>3 Bulan</strong> — Network Automation dengan Python</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="about section" id="About">
-      <h2 class="section-title">About Me</h2>
-      <div class="about_container">
-        <div class="about_img_block"><img src="assets/img/profile.jpg" alt="About section image" loading="lazy"></div>
-        <div class="about_text">
-          <p>Network Infrastructure & Security Engineer with 10+ years of experience designing, implementing, and securing enterprise networks across industrial plants, data centers, maritime fleets, and remote regions.</p>
-          <ul class="info_list">
-            <li><strong>Phone:</strong> +62 858-1112-7041</li>
-            <li><strong>Email:</strong> akbarjayadii@gmail.com</li>
-            <li><strong>Location:</strong> Indonesia</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="skills section" id="Skills">
+  <!-- SKILLS -->
+  <section class="skills-section section" id="Skills">
+    <div class="container">
       <h2 class="section-title">My Expertise Area</h2>
       <div class="skills-container">
         <div class="skills-column">
           <h3 class="skills-subtitle">Soft Skills</h3>
-          <div class="skill soft"><div class="label">Team Building</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="percent">70%</div></div>
-          <div class="skill soft"><div class="label">Communication</div><div class="bar-container"><div class="bar" style="--width: 80%;"></div></div><div class="percent">80%</div></div>
-          <div class="skill soft"><div class="label">Project Management</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="percent">70%</div></div>
-          <div class="skill soft"><div class="label">Problem Solving</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="percent">70%</div></div>
+          <div class="skill"><div class="label">Team Building</div><div class="bar-container"><div class="bar" style="--w:70%"></div></div><div class="percent">70%</div></div>
+          <div class="skill"><div class="label">Communication</div><div class="bar-container"><div class="bar" style="--w:80%"></div></div><div class="percent">80%</div></div>
+          <div class="skill"><div class="label">Project Management</div><div class="bar-container"><div class="bar" style="--w:70%"></div></div><div class="percent">70%</div></div>
+          <div class="skill"><div class="label">Problem Solving</div><div class="bar-container"><div class="bar" style="--w:70%"></div></div><div class="percent">70%</div></div>
         </div>
         <div class="skills-column">
           <h3 class="skills-subtitle">Hard Skills</h3>
-          <div class="skill hard"><div class="percent">90%</div><div class="bar-container"><div class="bar" style="--width: 90%;"></div></div><div class="label">Routing & Switching</div></div>
-          <div class="skill hard"><div class="percent">85%</div><div class="bar-container"><div class="bar" style="--width: 85%;"></div></div><div class="label">Security</div></div>
-          <div class="skill hard"><div class="percent">80%</div><div class="bar-container"><div class="bar" style="--width: 80%;"></div></div><div class="label">Wireless & SD-WAN</div></div>
-          <div class="skill hard"><div class="percent">75%</div><div class="bar-container"><div class="bar" style="--width: 75%;"></div></div><div class="label">Monitoring & Tools</div></div>
-          <div class="skill hard"><div class="percent">70%</div><div class="bar-container"><div class="bar" style="--width: 70%;"></div></div><div class="label">Automation</div></div>
+          <div class="skill"><div class="label">Routing & Switching</div><div class="bar-container"><div class="bar" style="--w:90%"></div></div><div class="percent">90%</div></div>
+          <div class="skill"><div class="label">Security</div><div class="bar-container"><div class="bar" style="--w:85%"></div></div><div class="percent">85%</div></div>
+          <div class="skill"><div class="label">Wireless & SD-WAN</div><div class="bar-container"><div class="bar" style="--w:80%"></div></div><div class="percent">80%</div></div>
+          <div class="skill"><div class="label">Monitoring & Tools</div><div class="bar-container"><div class="bar" style="--w:75%"></div></div><div class="percent">75%</div></div>
+          <div class="skill"><div class="label">Automation</div><div class="bar-container"><div class="bar" style="--w:70%"></div></div><div class="percent">70%</div></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- My Services Section -->
-    <section class="services section" id="Services">
+  <!-- SERVICES -->
+  <section class="services section" id="Services">
+    <div class="container">
       <h2 class="section-title">My Services</h2>
       <div class="services-container">
-        <div class="service-card"><i class="bx bx-network-chart icon"></i><h3>Network Design & Implementation</h3><p>End-to-end network design, routing, and infrastructure setup across data centers and industrial environments.</p></div>
-        <div class="service-card"><i class="bx bx-shield-quarter icon"></i><h3>Security & Firewall Management</h3><p>Configuration and optimization of Fortigate, NAC, and network segmentation for enterprise-level security.</p></div>
-        <div class="service-card"><i class="bx bx-wifi icon"></i><h3>SD-WAN & Wireless Solutions</h3><p>Deployment and management of wireless and SD-WAN infrastructures for high availability and coverage.</p></div>
-        <div class="service-card"><i class="bx bx-code-curly icon"></i><h3>Network Automation</h3><p>Automating repetitive network tasks using Python, scripts, and orchestration tools.</p></div>
+        <div class="service-card"><div class="icon"><i class="bx bx-network-chart"></i></div><h4>Network Design & Implementation</h4><p>End-to-end network design, routing, and infrastructure setup across data centers and industrial environments.</p></div>
+        <div class="service-card"><div class="icon"><i class="bx bx-shield-quarter"></i></div><h4>Security & Firewall Management</h4><p>Configuration and optimization of Fortigate, NAC, and network segmentation for enterprise-level security.</p></div>
+        <div class="service-card"><div class="icon"><i class="bx bx-wifi"></i></div><h4>SD-WAN & Wireless Solutions</h4><p>Deployment and management of wireless and SD-WAN infrastructures for high availability and coverage.</p></div>
+        <div class="service-card"><div class="icon"><i class="bx bx-code-curly"></i></div><h4>Network Automation</h4><p>Automating repetitive network tasks using Python, scripts, and orchestration tools.</p></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- My Portfolio Section -->
-    <section class="portfolio section" id="Portfolio">
+  <!-- PORTFOLIO -->
+  <section class="portfolio section" id="Portfolio">
+    <div class="container">
       <h2 class="section-title">My Portfolio</h2>
-      <h3 class="section-subtitle">Recent Works</h3>
+      <h3 class="section-subtitle" style="text-align:center;color:#1f2bb8;margin-top:-6px;margin-bottom:18px;">Recent Works</h3>
       <div class="portfolio-container">
-        <div class="portfolio-card"><img src="assets/img/project1.jpg" alt="Project 1" loading="lazy"><h4>Enterprise Network Design</h4><p>Designed and deployed segmented enterprise networks integrating IoT and automation.</p></div>
-        <div class="portfolio-card"><img src="assets/img/project2.jpg" alt="Project 2" loading="lazy"><h4>Fortigate Firewall Optimization</h4><p>Enhanced multi-site firewall policy, reduced latency, and improved traffic visibility.</p></div>
-        <div class="portfolio-card"><img src="assets/img/project3.jpg" alt="Project 3" loading="lazy"><h4>Wireless Infrastructure Upgrade</h4><p>Upgraded wireless backbone with high-availability SD-WAN integration.</p></div>
+        <div class="portfolio-card"><img src="assets/img/project1.jpg" alt=""><div class="card-body"><h4>Enterprise Network Design</h4><p>Designed and deployed segmented enterprise networks integrating IoT and automation.</p></div></div>
+        <div class="portfolio-card"><img src="assets/img/project2.jpg" alt=""><div class="card-body"><h4>Fortigate Firewall Optimization</h4><p>Enhanced multi-site firewall policy, reduced latency, and improved traffic visibility.</p></div></div>
+        <div class="portfolio-card"><img src="assets/img/project3.jpg" alt=""><div class="card-body"><h4>Wireless Infrastructure Upgrade</h4><p>Upgraded wireless backbone with high-availability SD-WAN integration.</p></div></div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="experience section" id="Experience">
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="exp_list">
-        <article class="exp_item">
-          <h3>Senior Network Infrastructure Engineer — PT Lotte Innovate Indonesia</h3>
-          <p class="exp_period">Nov 2023 – Present</p>
-          <ul>
-            <li>Designed segmented enterprise networks and managed ClearPass NAC, Fortigate, FortiWeb.</li>
-            <li>Ensured availability for industrial IoT & robotic systems.</li>
-          </ul>
-        </article>
-        <article class="exp_item">
-          <h3>Network Engineer — PT Skyreach</h3>
-          <p class="exp_period">Sep 2021 – Sep 2023</p>
-          <ul>
-            <li>Managed Cisco, Mikrotik, Aruba, Fortinet SD-WAN; led Pelni ship-network project.</li>
-            <li>Improved monitoring and reduced downtime by ~11%.</li>
-          </ul>
-        </article>
-        <article class="exp_item">
-          <h3>Network Engineer — PT Tele Globe Global</h3>
-          <p class="exp_period">Dec 2018 – Feb 2021</p>
-          <ul>
-            <li>Maintained data center racks, BTS, routing systems; improved uptime by ~27%.</li>
-          </ul>
-        </article>
-      </div>
-      <h3>Key Achievements</h3>
-      <ul class="achievements">
-        <li>Reduced downtime across roles by 11–27% via monitoring & workflows.</li>
-        <li>Designed factory network integrating IoT & robotics for chemical plant.</li>
-        <li>Led network modernization for 26 Pelni vessels with Fortinet security.</li>
-        <li>Automated ticket routing to speed NOC response by ~15%.</li>
-      </ul>
-    </section>
-
-    <section class="contact section" id="Contact">
+  <!-- CONTACT -->
+  <section class="section" id="Contact">
+    <div class="container">
       <h2 class="section-title">Contact</h2>
-      <div class="contact_grid">
-        <div>
-          <p><strong>Phone:</strong> +62 858-1112-7041</p>
-          <p><strong>Email:</strong> akbarjayadii@gmail.com</p>
-          <p><strong>Location:</strong> Indonesia</p>
-        </div>
-        <form class="contact_form" action="https://formspree.io/f/your-form-id" method="POST">
-          <input type="text" name="name" placeholder="Your name" required aria-label="Your Name">
-          <input type="email" name="email" placeholder="Email" required aria-label="Your Email">
-          <textarea name="message" placeholder="Message" rows="5" required aria-label="Your Message"></textarea>
-          <button class="button" type="submit">Send</button>
-        </form>
+      <div style="max-width:700px;margin:0 auto;text-align:center;">
+        <p>Phone: <strong>0858 1112 7041</strong> • Email: <strong>akbarjayadii@gmail.com</strong></p>
+        <p>Ready to collaborate on network design, security, or automation projects — feel free to reach out.</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>&copy; M. Akbar A. R. — Portfolio</p>
+    <div class="container">© 2025 Muhammad Akbar Jayadi AR. All rights reserved.</div>
   </footer>
+
   <script src="assets/js/main.js"></script>
 </body>
 </html>
