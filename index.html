@@ -4,27 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>M. Akbar A. R. — Portfolio</title>
-    
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Portfolio of M. Akbar A. R., a Senior Network Infrastructure & Security Engineer specializing in routing/switching, NAC, firewalls, SD-WAN, and industrial IoT.">
     <meta name="keywords" content="M. Akbar A. R., Network Engineer, Security Engineer, Portfolio, Routing, Switching, Fortigate, Indonesia">
     <meta name="author" content="M. Akbar A. R.">
-    
-    <!-- Open Graph for Social Sharing -->
     <meta property="og:title" content="Portfolio | M. Akbar A. R.">
     <meta property="og:description" content="Explore my experience in network infrastructure and security. Download my CV and get in touch!">
     <meta property="og:image" content="assets/img/profile.jpg">
     <meta property="og:url" content="https://your-website-url.com/">
     <meta property="og:type" content="website">
-    
-    <!-- Icon -->
     <link rel="shortcut icon" href="assets/img/icon.jpg">
-    
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
-        /* Tambahan CSS untuk responsivitas, efek, dan progress bars */
         @media (max-width: 768px) {
             .home_container, .about_container, .skills_container, .exp_list, .contact_grid {
                 grid-template-columns: 1fr;
@@ -41,47 +32,58 @@
         .button { background: #007bff; color: white; border: none; padding: 10px; cursor: pointer; }
         .button:hover { background: #0056b3; }
         .footer p { margin-top: 1rem; }
-        
-        /* Progress Bars */
-        .skills_data {
-            margin-bottom: 1rem;
-        }
-        .skills_name {
-            display: block;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-        .skills_number {
-            float: right;
-            font-weight: 600;
-        }
-        .skills_bar {
-            display: block;
-            height: 5px;
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-top: 0.5rem;
-        }
-        .skills_bar::before {
-            content: '';
-            display: block;
-            height: 100%;
-            background: #007bff;
-            border-radius: 5px;
-            width: 0;
-            animation: progress 1s ease-out forwards;
-        }
-        .skills_routing::before { animation-delay: 0.1s; width: 90%; }
-        .skills_security::before { animation-delay: 0.2s; width: 85%; }
-        .skills_wireless::before { animation-delay: 0.3s; width: 80%; }
-        .skills_monitoring::before { animation-delay: 0.4s; width: 75%; }
-        .skills_automation::before { animation-delay: 0.5s; width: 70%; }
 
-        @keyframes progress {
-            from { width: 0; }
-            to { width: var(--width); }
+        /* Progress Bars - versi modern dengan animasi gradasi */
+        .skills_data {
+          margin-bottom: 1rem;
+          position: relative;
         }
+
+        .skills_name {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: #222;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
+
+        .skills_bar {
+          position: relative;
+          display: block;
+          height: 6px;
+          background: #e6e6e6;
+          border-radius: 4px;
+          overflow: hidden;
+        }
+
+        .skills_bar::before {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: var(--width);
+          background: linear-gradient(90deg, #3b4cca, #6a82fb);
+          border-radius: 4px;
+          transform: scaleX(0);
+          transform-origin: left;
+          animation: fillBar 1.3s ease-out forwards;
+        }
+
+        @keyframes fillBar {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+
+        .skills_tm::before { --width: 70%; animation-delay: 0.1s; }
+        .skills_cm::before { --width: 80%; animation-delay: 0.2s; }
+        .skills_pm::before { --width: 70%; animation-delay: 0.3s; }
+        .skills_ps::before { --width: 70%; animation-delay: 0.4s; }
+        .skills_html::before { --width: 70%; animation-delay: 0.5s; }
+        .skills_python::before { --width: 70%; animation-delay: 0.6s; }
+        .skills_java::before { --width: 70%; animation-delay: 0.7s; }
+        .skills_sql::before { --width: 60%; animation-delay: 0.8s; }
     </style>
 </head>
 <body>
@@ -101,7 +103,7 @@
     <main class="l-main">
         <section class="home" id="Home">
             <div class="container home_container">
-                <div class="home_img"><img src="assets/img/profile.jpg" alt="Profile photo of M. Akbar A. R., a senior network engineer" loading="lazy"></div>
+                <div class="home_img"><img src="assets/img/profile.jpg" alt="Profile photo of M. Akbar A. R." loading="lazy"></div>
                 <h1 class="home_title">M. Akbar A. R.</h1>
                 <p class="home_profession">Senior Network Infrastructure & Security Engineer</p>
                 <div class="home_actions">
@@ -114,9 +116,9 @@
         <section class="about section" id="About">
             <h2 class="section-title">About Me</h2>
             <div class="about_container">
-                <div class="about_img_block"><img src="assets/img/profile.jpg" alt="About section image representing Akbar's background" loading="lazy"></div>
+                <div class="about_img_block"><img src="assets/img/profile.jpg" alt="About section image" loading="lazy"></div>
                 <div class="about_text">
-                    <p>Network Infrastructure & Security Engineer with 10+ years of experience designing, implementing, and securing enterprise networks across industrial plants, data centers, maritime fleets, and remote 3T regions. Strong in routing/switching, NAC, firewalls, SD-WAN, wireless mobility, and industrial IoT networking.</p>
+                    <p>Network Infrastructure & Security Engineer with 10+ years of experience designing, implementing, and securing enterprise networks across industrial plants, data centers, maritime fleets, and remote regions.</p>
                     <ul class="info_list">
                         <li><strong>Phone:</strong> +62 858-1112-7041</li>
                         <li><strong>Email:</strong> akbarjayadii@gmail.com</li>
@@ -127,36 +129,21 @@
         </section>
 
         <section class="skills section" id="Skills">
-            <h2 class="section-title">Skills & Expertise</h2>
+            <h2 class="section-title">My Expertise Area</h2>
             <div class="skills_container bd-grid">
                 <div class="skills_content">
-                    <h3 class="skills_subtitle">Technical Skills</h3>
-                    
-                    <div class="skills_data">
-                        <span class="skills_name">Routing & Switching</span>
-                        <span class="skills_number">90%</span>
-                        <span class="skills_bar skills_routing"></span>
-                    </div>
-                    <div class="skills_data">
-                        <span class="skills_name">Security</span>
-                        <span class="skills_number">85%</span>
-                        <span class="skills_bar skills_security"></span>
-                    </div>
-                    <div class="skills_data">
-                        <span class="skills_name">Wireless & SD-WAN</span>
-                        <span class="skills_number">80%</span>
-                        <span class="skills_bar skills_wireless"></span>
-                    </div>
-                    <div class="skills_data">
-                        <span class="skills_name">Monitoring & Tools</span>
-                        <span class="skills_number">75%</span>
-                        <span class="skills_bar skills_monitoring"></span>
-                    </div>
-                    <div class="skills_data">
-                        <span class="skills_name">Automation</span>
-                        <span class="skills_number">70%</span>
-                        <span class="skills_bar skills_automation"></span>
-                    </div>
+                    <h3 class="skills_subtitle">Soft Skills</h3>
+                    <div class="skills_data"><span class="skills_name">Team Building</span><span class="skills_number">70%</span><span class="skills_bar skills_tm"></span></div>
+                    <div class="skills_data"><span class="skills_name">Communication</span><span class="skills_number">80%</span><span class="skills_bar skills_cm"></span></div>
+                    <div class="skills_data"><span class="skills_name">Project Management</span><span class="skills_number">70%</span><span class="skills_bar skills_pm"></span></div>
+                    <div class="skills_data"><span class="skills_name">Problem Solving</span><span class="skills_number">70%</span><span class="skills_bar skills_ps"></span></div>
+                </div>
+                <div class="skills_content">
+                    <h3 class="skills_subtitle">Hard Skills</h3>
+                    <div class="skills_data"><span class="skills_name">HTML/CSS</span><span class="skills_number">70%</span><span class="skills_bar skills_html"></span></div>
+                    <div class="skills_data"><span class="skills_name">Python</span><span class="skills_number">70%</span><span class="skills_bar skills_python"></span></div>
+                    <div class="skills_data"><span class="skills_name">Java</span><span class="skills_number">70%</span><span class="skills_bar skills_java"></span></div>
+                    <div class="skills_data"><span class="skills_name">Microsoft SQL Server</span><span class="skills_number">60%</span><span class="skills_bar skills_sql"></span></div>
                 </div>
             </div>
         </section>
@@ -168,7 +155,7 @@
                     <h3>Senior Network Infrastructure Engineer — PT Lotte Innovate Indonesia</h3>
                     <p class="exp_period">Nov 2023 – Present</p>
                     <ul>
-                        <li>Designed segmented enterprise networks (Office/Factory/DMZ) and managed ClearPass NAC, Fortigate, FortiWeb.</li>
+                        <li>Designed segmented enterprise networks and managed ClearPass NAC, Fortigate, FortiWeb.</li>
                         <li>Ensured availability for industrial IoT & robotic systems.</li>
                     </ul>
                 </article>
@@ -176,8 +163,8 @@
                     <h3>Network Engineer — PT Skyreach</h3>
                     <p class="exp_period">Sep 2021 – Sep 2023</p>
                     <ul>
-                        <li>Managed Cisco, Mikrotik, Aruba, Fortinet SD-WAN; led Pelni ship-network project for 26 vessels.</li>
-                        <li>Improved monitoring and reduced downtime by ~11% through alerting and preventive maintenance.</li>
+                        <li>Managed Cisco, Mikrotik, Aruba, Fortinet SD-WAN; led Pelni ship-network project.</li>
+                        <li>Improved monitoring and reduced downtime by ~11%.</li>
                     </ul>
                 </article>
                 <article class="exp_item">
@@ -192,7 +179,7 @@
             <ul class="achievements">
                 <li>Reduced downtime across roles by 11–27% via monitoring & workflows.</li>
                 <li>Designed factory network integrating IoT & robotics for chemical plant.</li>
-                <li>Led network modernization for 26 Pelni vessels (LAN/WiFi + Fortinet security).</li>
+                <li>Led network modernization for 26 Pelni vessels with Fortinet security.</li>
                 <li>Automated ticket routing to speed NOC response by ~15%.</li>
             </ul>
         </section>
@@ -218,7 +205,6 @@
     <footer class="footer">
         <p>&copy; M. Akbar A. R. — Portfolio</p>
     </footer>
-
     <script src="assets/js/main.js"></script>
 </body>
 </html>
