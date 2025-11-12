@@ -1,67 +1,224 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>M. Akbar A. R. — Cybersecurity Portfolio</title>
-<link rel="stylesheet" href="assets/css/style.css" />
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>M. Akbar A. R. — Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of M. Akbar A. R., a Senior Network Infrastructure & Security Engineer specializing in routing/switching, NAC, firewalls, SD-WAN, and industrial IoT.">
+    <meta name="keywords" content="M. Akbar A. R., Network Engineer, Security Engineer, Portfolio, Routing, Switching, Fortigate, Indonesia">
+    <meta name="author" content="M. Akbar A. R.">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Portfolio | M. Akbar A. R.">
+    <meta property="og:description" content="Explore my experience in network infrastructure and security. Download my CV and get in touch!">
+    <meta property="og:image" content="assets/img/profile.jpg">
+    <meta property="og:url" content="https://your-website-url.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Icon -->
+    <link rel="shortcut icon" href="assets/img/icon.jpg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <style>
+        /* Tambahan CSS untuk responsivitas, efek, dan progress bars */
+        @media (max-width: 768px) {
+            .home_container, .about_container, .skills_container, .exp_list, .contact_grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            .home_title { font-size: 1.5rem; }
+            .about_img_block img, .exp_item img { width: 100%; height: auto; }
+            .nav_menu { position: fixed; top: 0; right: -100%; width: 70%; height: 100vh; background: rgba(0,0,0,0.9); transition: 0.5s; }
+            .nav_menu.show { right: 0; }
+        }
+        .skill_card { transition: transform 0.3s ease; }
+        .skill_card:hover { transform: scale(1.05); }
+        .contact_form input, .contact_form textarea { margin-bottom: 10px; border: 1px solid #ccc; padding: 10px; }
+        .button { background: #007bff; color: white; border: none; padding: 10px; cursor: pointer; }
+        .button:hover { background: #0056b3; }
+        .footer p { margin-top: 1rem; }
+        
+        /* Progress Bars */
+        .skills_data {
+            margin-bottom: 1rem;
+        }
+        .skills_name {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .skills_number {
+            float: right;
+            font-weight: 600;
+        }
+        .skills_bar {
+            display: block;
+            height: 5px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+        .skills_bar::before {
+            content: '';
+            display: block;
+            height: 100%;
+            background: #007bff;
+            border-radius: 5px;
+            width: 0;
+            animation: progress 1s ease-out forwards;
+        }
+        .skills_routing::before { animation-delay: 0.1s; width: 90%; }
+        .skills_security::before { animation-delay: 0.2s; width: 85%; }
+        .skills_wireless::before { animation-delay: 0.3s; width: 80%; }
+        .skills_monitoring::before { animation-delay: 0.4s; width: 75%; }
+        .skills_automation::before { animation-delay: 0.5s; width: 70%; }
+
+        @keyframes progress {
+            from { width: 0; }
+            to { width: var(--width); }
+        }
+    </style>
 </head>
 <body>
-<header class="header">
-<nav class="nav">
-<div class="logo">M. Akbar A. R.</div>
-<div class="menu">
-<a href="#Home">Home</a>
-<a href="#About">About</a>
-<a href="#Skills">Skills</a>
-<a href="#Experience">Experience</a>
-<a href="#Contact">Contact</a>
-</div>
-</nav>
-</header>
+    <header class="header">
+        <nav class="nav bd-grid">
+            <div class="nav_logo">M. Akbar A. R.</div>
+            <div class="nav_menu">
+                <a href="#Home" class="nav_link">Home</a>
+                <a href="#About" class="nav_link">About</a>
+                <a href="#Skills" class="nav_link">Skills</a>
+                <a href="#Experience" class="nav_link">Experience</a>
+                <a href="#Contact" class="nav_link">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-<section class="hero" id="Home">
-<img src="assets/img/profile.jpg" class="hero-img" />
-<h1 class="glow">M. Akbar A. R.</h1>
-<p class="sub">Network Infrastructure & Cybersecurity Engineer</p>
-</section>
+    <main class="l-main">
+        <section class="home" id="Home">
+            <div class="container home_container">
+                <div class="home_img"><img src="assets/img/profile.jpg" alt="Profile photo of M. Akbar A. R., a senior network engineer" loading="lazy"></div>
+                <h1 class="home_title">M. Akbar A. R.</h1>
+                <p class="home_profession">Senior Network Infrastructure & Security Engineer</p>
+                <div class="home_actions">
+                    <a class="button" href="assets/pdf/CV-M-Akbar-AR.pdf" download>Download CV</a>
+                    <a class="button ghost" href="#Contact">Contact</a>
+                </div>
+            </div>
+        </section>
 
-<section class="section" id="About">
-<h2 class="title glow">About Me</h2>
-<p class="text">Network & Cybersecurity Engineer specializing in enterprise networking, SD‑WAN, NAC, Firewalls, and industrial systems.</p>
-</section>
+        <section class="about section" id="About">
+            <h2 class="section-title">About Me</h2>
+            <div class="about_container">
+                <div class="about_img_block"><img src="assets/img/profile.jpg" alt="About section image representing Akbar's background" loading="lazy"></div>
+                <div class="about_text">
+                    <p>Network Infrastructure & Security Engineer with 10+ years of experience designing, implementing, and securing enterprise networks across industrial plants, data centers, maritime fleets, and remote 3T regions. Strong in routing/switching, NAC, firewalls, SD-WAN, wireless mobility, and industrial IoT networking.</p>
+                    <ul class="info_list">
+                        <li><strong>Phone:</strong> +62 858-1112-7041</li>
+                        <li><strong>Email:</strong> akbarjayadii@gmail.com</li>
+                        <li><strong>Location:</strong> Indonesia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-<section class="section" id="Skills">
-<h2 class="title glow">Skills</h2>
-<div class="skills-grid">
-<div class="skill-card neon-border">Cybersecurity • NAC • Firewalls</div>
-<div class="skill-card neon-border">Routing • Switching • MPLS</div>
-<div class="skill-card neon-border">SD‑WAN • Aruba • Fortinet</div>
-<div class="skill-card neon-border">Monitoring • Automation</div>
-</div>
-</section>
+        <section class="skills section" id="Skills">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills_container bd-grid">
+                <div class="skills_content">
+                    <h3 class="skills_subtitle">Technical Skills</h3>
+                    
+                    <div class="skills_data">
+                        <span class="skills_name">Routing & Switching</span>
+                        <span class="skills_number">90%</span>
+                        <span class="skills_bar skills_routing"></span>
+                    </div>
+                    <div class="skills_data">
+                        <span class="skills_name">Security</span>
+                        <span class="skills_number">85%</span>
+                        <span class="skills_bar skills_security"></span>
+                    </div>
+                    <div class="skills_data">
+                        <span class="skills_name">Wireless & SD-WAN</span>
+                        <span class="skills_number">80%</span>
+                        <span class="skills_bar skills_wireless"></span>
+                    </div>
+                    <div class="skills_data">
+                        <span class="skills_name">Monitoring & Tools</span>
+                        <span class="skills_number">75%</span>
+                        <span class="skills_bar skills_monitoring"></span>
+                    </div>
+                    <div class="skills_data">
+                        <span class="skills_name">Automation</span>
+                        <span class="skills_number">70%</span>
+                        <span class="skills_bar skills_automation"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="section" id="Experience">
-<h2 class="title glow">Experience</h2>
-<ul class="exp-list">
-<li class="exp-item neon-border">Senior Network Engineer — Lotte Innovate</li>
-<li class="exp-item neon-border">Network Engineer — Skyreach</li>
-<li class="exp-item neon-border">Network Engineer — TGG</li>
-</ul>
-</section>
+        <section class="experience section" id="Experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="exp_list">
+                <article class="exp_item">
+                    <h3>Senior Network Infrastructure Engineer — PT Lotte Innovate Indonesia</h3>
+                    <p class="exp_period">Nov 2023 – Present</p>
+                    <ul>
+                        <li>Designed segmented enterprise networks (Office/Factory/DMZ) and managed ClearPass NAC, Fortigate, FortiWeb.</li>
+                        <li>Ensured availability for industrial IoT & robotic systems.</li>
+                    </ul>
+                </article>
+                <article class="exp_item">
+                    <h3>Network Engineer — PT Skyreach</h3>
+                    <p class="exp_period">Sep 2021 – Sep 2023</p>
+                    <ul>
+                        <li>Managed Cisco, Mikrotik, Aruba, Fortinet SD-WAN; led Pelni ship-network project for 26 vessels.</li>
+                        <li>Improved monitoring and reduced downtime by ~11% through alerting and preventive maintenance.</li>
+                    </ul>
+                </article>
+                <article class="exp_item">
+                    <h3>Network Engineer — PT Tele Globe Global</h3>
+                    <p class="exp_period">Dec 2018 – Feb 2021</p>
+                    <ul>
+                        <li>Maintained data center racks, BTS, routing systems; improved uptime by ~27%.</li>
+                    </ul>
+                </article>
+            </div>
+            <h3>Key Achievements</h3>
+            <ul class="achievements">
+                <li>Reduced downtime across roles by 11–27% via monitoring & workflows.</li>
+                <li>Designed factory network integrating IoT & robotics for chemical plant.</li>
+                <li>Led network modernization for 26 Pelni vessels (LAN/WiFi + Fortinet security).</li>
+                <li>Automated ticket routing to speed NOC response by ~15%.</li>
+            </ul>
+        </section>
 
-<section class="section" id="Contact">
-<h2 class="title glow">Contact</h2>
-<p>Email: akbarjayadii@gmail.com</p>
-<p>Phone: +62 858-1112-7041</p>
-</section>
+        <section class="contact section" id="Contact">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact_grid">
+                <div>
+                    <p><strong>Phone:</strong> +62 858-1112-7041</p>
+                    <p><strong>Email:</strong> akbarjayadii@gmail.com</p>
+                    <p><strong>Location:</strong> Indonesia</p>
+                </div>
+                <form class="contact_form" action="https://formspree.io/f/your-form-id" method="POST">
+                    <input type="text" name="name" placeholder="Your name" required aria-label="Your Name">
+                    <input type="email" name="email" placeholder="Email" required aria-label="Your Email">
+                    <textarea name="message" placeholder="Message" rows="5" required aria-label="Your Message"></textarea>
+                    <button class="button" type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-<footer class="footer">
-<p>© 2025 Akbar — Cybersecurity Portfolio</p>
-</footer>
+    <footer class="footer">
+        <p>&copy; M. Akbar A. R. — Portfolio</p>
+    </footer>
 
-<script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
